@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Sundar raj">
+    <meta name="Description" content="">
+    <title>Stopwatch</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        body{
+            font-family: "Gill Sans", sans-serif;
+            font-size : 20px;
+        }
+        #title{
+            font-size: 44px;
+            color: black;
+            letter-spacing: 1px;
+            text-shadow: 2px 1px 1px red;
+        }
+        #Stopwatch{
+            font-family: "Roboto", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size : 40px
+        }
+    </style>
+</head>
+<body>
+    <center><h2 id="title">Simple Stopwatch Project - HTML, CSS, JavaScript</h2></center>
+    <span id="Stopwatch">
+        <span id='hour'>00:</span>
+        <span id='min'>00:</span>
+        <span id='sec'>00:</span>
+        <span id='millisecond'>000</span>
+    </span>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        
+
+
+        var reset = document.getElementById('reset').addEventListener('click',resetfun);
+        var start = document.getElementById('start').addEventListener('click',startfun);
+        var stop = document.getElementById('stop').addEventListener('click',stopfun);
+
+        
+        var mincount = 0;
+        var seccount = 0;
+        var millisecondcount = 0;
+
+
+        var settime = setInterval(starttime,10);
+
+        function starttime(){
+                millisecondcount = millisecondcount+1;
+                
+                var min =  document.querySelector('#min');
+                var sec =  document.querySelector('#sec');
+                var millisecond = document.querySelector('#millisecond');
+
+                
+                min.innerHTML = mincount.toString().padStart(2,0);
+                sec.innerHTML = seccount.toString().padStart(2,0);
+                millisecond.innerHTML = millisecondcount.toString().padStart(3,0);
+
+                if(millisecondcount == 100){
+                   millisecondcount = 0;
+                   seccount += 1;
+                   
+                   if(seccount > 10){
+                        mincount += 1;    
+                        seccount = 0;    
+                   }
+                   if(mincount == 3){
+                    console.log('hi')
+                   }
+                } 
+            }
+
+            function resetfun(){
+                console.log('reset');
+            }
+
+        function startfun(){
+            settime.resume();
+        }
+
+        function stopfun(){
+            settime.pause();
+            // clearInterval(settime);
+        }
+
+        
+    </script>
+</body>
+</html>
