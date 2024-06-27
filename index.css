@@ -2,19 +2,44 @@
 body{
     font-family: "Gill Sans", sans-serif;
     font-size : 20px;
+    height: 100vh;
+    width: 100%;
 }
-#title{
-    font-size: 44px;
-    color: black;
-    letter-spacing: 1px;
-    text-shadow: 2px 1px 1px red;
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+
+.card_box{
+    height: 50%;
+    width:50%;
+    background:url('https://images.unsplash.com/photo-1592134212762-51ee580cd38a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    display: flex;
+    flex-direction: column;
 }
 #Stopwatch{
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size : 40px
+    font-size : 40px;   
+    background-color: whitesmoke;
+    text-align: center;
 }
+.button_div{
+    text-align: center;
+}
+
+#title{
+    font-size: 44px;
+    padding : 5px;
+    color: black;
+    letter-spacing: 1px;
+    text-shadow: 2px 1px 1px red;
+}
+
 #start{
     /* color: ; */
     background: #1bf5af; 
