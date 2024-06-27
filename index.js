@@ -5,13 +5,22 @@ var stop = document.getElementById('stop').addEventListener('click',stopfun);
 var resume = document.getElementById('resume').addEventListener('click',resumefun);
 
 
+var startfunction =  document.getElementById('start');
+var resumefunction = document.getElementById('resume');
+var stopfunction = document.getElementById('stop');
+
 var millisecond = document.getElementById('millisecond');
 var sec = document.getElementById('sec');
 var min = document.getElementById('min');   
 
+resumefunction.setAttribute('style','display:none');
+
 var count = 0;
 var secondcount = 0;
 var mincount = 0;
+
+
+
 function starttime(){                    
     settimes = setInterval(()=>{        
         count += 1;
@@ -34,6 +43,7 @@ function starttime(){
 
 function startfun(){    
     starttime();
+    startfunction.setAttribute('disabled',true);
 }
 
 function resetfun(){
@@ -44,16 +54,25 @@ function resetfun(){
     millisecond.innerText = count.toString().padStart(3,0);
     sec.innerText = secondcount.toString().padStart(2,0);
     min.innerText = mincount.toString().padStart(2,0);
+    startfunction.removeAttribute('disabled');
+}
+
+function stopfun(){        
+    if(count > 0){
+        clearInterval(settimes);
+        if(settimes){
+            resumefunction.setAttribute('style','display:visible');                   
+            stopfunction.setAttribute('style','display:none'); 
+        }
+    } 
+              
+}
+
+function resumefun(){      
     
-    console.log('reset');
-}
-
-function stopfun(){     
-    clearInterval(settimes);                     
-}
-
-function resumefun(){
-    starttime();    
+    stopfunction.setAttribute('style','display:visible'); 
+    resumefunction.setAttribute('style','display:none');                   
+    starttime();  
 }
 
 

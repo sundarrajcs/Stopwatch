@@ -15,3 +15,9 @@ body{
     font-style: normal;
     font-size : 40px
 }
+#start{
+    /* color: ; */
+    background: #1bf5af; 
+    padding: 15px;
+    height: 20px;       
+}
