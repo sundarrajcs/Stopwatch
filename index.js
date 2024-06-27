@@ -6,15 +6,16 @@ var resume = document.getElementById('resume').addEventListener('click',resumefu
 
     
 
-var count = 1;
+var count = 0;
 function starttime(){                    
-    settimes = setInterval(()=>{
+    settimes = setInterval(()=>{        
         count += 1;
         console.log(count) ;
     },1000);
 }
 
 function startfun(){
+    
     starttime();
 }
 
@@ -24,10 +25,11 @@ function resetfun(){
 
 function stopfun(){ 
     console.log('stop')               
-    // clearInterval(settimes);                     
+    clearInterval(settimes);                     
 }
 
 function resumefun(){
+    starttime();
     console.log('Resume');
 }
 
