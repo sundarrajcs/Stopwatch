@@ -10,26 +10,29 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
+    text-align: center;
+    margin : 0 auto;  
+    height: 500px;
+    width:500px; 
+    /* background : gray; */
+    background:url('https://images.unsplash.com/photo-1592134212762-51ee580cd38a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 }
 
-.card_box{
-    height: 50%;
-    width:50%;
-    background:url('https://images.unsplash.com/photo-1592134212762-51ee580cd38a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    display: flex;
-    flex-direction: column;
+.card_box{   
+    align-items: center;    
 }
 #Stopwatch{
     font-family: "Roboto", sans-serif;
-    font-weight: 300;
+    font-weight: 600;
     font-style: normal;
-    font-size : 40px;   
-    background-color: whitesmoke;
+    font-size : 50px;      
     text-align: center;
 }
 .button_div{
     text-align: center;
+    display: flex;
+    flex-direction: row;
 }
 
 #title{
@@ -40,9 +43,8 @@ body{
     text-shadow: 2px 1px 1px red;
 }
 
-#start{
-    /* color: ; */
-    background: #1bf5af; 
-    padding: 15px;
-    height: 20px;       
+.btn{
+    padding : 10px;
+    margin : 5px;
+    width : 100%;
 }

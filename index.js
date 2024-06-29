@@ -9,16 +9,18 @@ var startfunction =  document.getElementById('start');
 var resumefunction = document.getElementById('resume');
 var stopfunction = document.getElementById('stop');
 
+
 var millisecond = document.getElementById('millisecond');
 var sec = document.getElementById('sec');
 var min = document.getElementById('min');   
+var hour = document.getElementById('hour');
 
 resumefunction.setAttribute('style','display:none');
 
 var count = 0;
 var secondcount = 0;
 var mincount = 0;
-
+var hourcount = 0;
 
 
 function starttime(){                    
@@ -32,12 +34,21 @@ function starttime(){
             sec.innerText = secondcount.toString().padStart(2,0);
         }
 
-        if(secondcount == 10){
+        if(secondcount == 59){
             count = 0;
             secondcount = 0; 
-            mincount += 1;           
+            mincount += 1;                       
             min.innerText = mincount.toString().padStart(2,0);
         }
+
+        if(mincount == 59){
+            count = 0;
+            secondcount = 0;
+            mincount = 0;
+            hourcount += 1;
+            hour.innerText= hourcount.toString().padStart(2,0);
+        }
+        
     },10);
 }
 
