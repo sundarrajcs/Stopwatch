@@ -66,88 +66,22 @@ function resetfun(){
     sec.innerText = secondcount.toString().padStart(2,0);
     min.innerText = mincount.toString().padStart(2,0);
     startfunction.removeAttribute('disabled');
+    resumefunction.setAttribute('style','display:none');    
+    stopfunction.setAttribute('style','display:visible');
 }
 
-function stopfun(){        
+function stopfun(){ 
     if(count > 0){
         clearInterval(settimes);
         if(settimes){
             resumefunction.setAttribute('style','display:visible');                   
             stopfunction.setAttribute('style','display:none'); 
         }
-    } 
-              
+    }               
 }
 
-function resumefun(){      
-    
+function resumefun(){          
     stopfunction.setAttribute('style','display:visible'); 
     resumefunction.setAttribute('style','display:none');                   
     starttime();  
 }
-
-
-
-
-// var mincount = 0;
-// var seccount = 0;
-// var millisecondcount = 0;
-
-        
-//         function starttime(){                    
-//             settimes = setInterval(()=>{
-//                    console.log('hii') 
-//             },1000);
-//         }
-//                 // millisecondcount = millisecondcount+1;
-        
-//                 // var min =  document.querySelector('#min');
-//                 // var sec =  document.querySelector('#sec');
-//                 // var millisecond = document.querySelector('#millisecond');
-
-                
-//                 // min.innerHTML = mincount.toString().padStart(2,0);
-//                 // sec.innerHTML = seccount.toString().padStart(2,0);
-//                 // millisecond.innerHTML = millisecondcount.toString().padStart(3,0);
-
-//                 // if(millisecondcount == 100){
-//                 // millisecondcount = 0;
-//                 // seccount += 1;
-                
-//                 //     if(seccount > 10){
-//                 //             mincount += 1;    
-//                 //             seccount = 0;    
-//                 //     }
-//                 //     if(mincount == 3){
-//                 //         console.log('hi')
-//                 //     }
-//             // }                                         
-
-//     function times(){
-//         console.log('Function Ok');
-//     }
-    
-//     function startfun(){
-//         starttime();
-//     }
-
-//     function resetfun(){
-//         console.log('reset');
-//     }
-
-//     function stopfun(){ 
-//         console.log('stop')               
-//         clearInterval(settimes);                     
-//     }
-
-//     function resumefun(){
-//         console.log('Resume');
-//     }
-
-
-
-//     function sample(){
-//         console.log('Sample Page');
-//     }
-
-//     sample();
